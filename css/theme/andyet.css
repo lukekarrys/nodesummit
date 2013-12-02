@@ -57,6 +57,10 @@ body {
   text-transform: uppercase;
   text-shadow: -1px -1px 1px #4d5659; }
 
+.reveal h3 {margin:0;}
+
+hr {margin: 40px 0;}
+
 .reveal h1 {
   text-shadow: -1px -1px 1px #4d5659; }
 

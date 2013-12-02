@@ -52,19 +52,18 @@ Notes:
 
 
 
-## Our <span>HTML/Jade</span>
+## Our <span>HTML</span>
 
-```jade
-doctype 5
-html
-  head
-    title tourRouter
-    //- Meta tags...
-    //- App splash images...
-    //- Favicons and app icons...
-    link(rel='stylesheet', href=cssFileName)
-    script(src=jsFileName)
-```
+<pre><code>&lt;!DOCTYPE html&gt;
+  &lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;tourRouter&lt;/title&gt;
+    &lt;!-- Meta tags... --&gt;
+    &lt;!-- Splash images... --&gt;
+    &lt;!-- Favicons and app icons... --&gt;
+    &lt;link rel="stylesheet" href="/app.css"&gt;
+    &lt;script src="/app.js"&gt;&lt;/script&gt;
+</code></pre>
 
 
 
@@ -214,20 +213,6 @@ Notes:
     <span data-fragment-index="3" class="stack fragment fade-in">`moment`</span>
   </span>
   <span class="align">` --save`</span>
-- <span class="stack-holder align" style="width: 233px;">
-    <span data-fragment-index="1" class="stack fragment fade-out">`backbone`</span>
-    <span data-fragment-index="1" class="stack fragment fade-in"><span data-fragment-index="2" class="fragment fade-out">`async`</span></span>
-    <span data-fragment-index="2" class="stack fragment fade-in"><span data-fragment-index="3" class="fragment fade-out">`lodash`</span></span>
-    <span data-fragment-index="3" class="stack fragment fade-in">`moment`</span>
-  </span>
-  <span class="align">` = require('`</span>
-  <span class="stack-holder align" style="width: 220px;">
-    <span data-fragment-index="1" class="stack fragment fade-out">`backbone`</span>
-    <span data-fragment-index="1" class="stack fragment fade-in"><span data-fragment-index="2" class="fragment fade-out">`async`</span></span>
-    <span data-fragment-index="2" class="stack fragment fade-in"><span data-fragment-index="3" class="fragment fade-out">`lodash`</span></span>
-    <span data-fragment-index="3" class="stack fragment fade-in">`moment`</span>
-  </span>
-  <span class="align">`')`</span>
 - Moonboots can handle **anything else**
 - Send [Univeral Module Definition](https://github.com/umdjs/umd/blob/master/returnExports.js) **PRs :)**
 
@@ -243,7 +228,63 @@ Notes:
 
 
 
+## Clientside <span>Modules</span>
+
+### From <span>Our Code</span>
+<span class="align">`var`</span>
+<span class="stack-holder align" style="width: 300px;">
+  <span data-fragment-index="1" class="stack fragment fade-out">`BasePage`</span>
+  <span data-fragment-index="1" class="stack fragment fade-in"><span data-fragment-index="2" class="fragment fade-out">`geospatial`</span></span>
+  <span data-fragment-index="2" class="stack fragment fade-in"><span data-fragment-index="3" class="fragment fade-out">`ShowModel`</span></span>
+  <span data-fragment-index="3" class="stack fragment fade-in">`templates`</span>
+</span>
+<span class="align">`=`</span><br/>
+<span class="align">`require('`</span>
+<span class="stack-holder align" style="width: 400px;">
+  <span data-fragment-index="1" class="stack fragment fade-out">`../pages/base`</span>
+  <span data-fragment-index="1" class="stack fragment fade-in"><span data-fragment-index="2" class="fragment fade-out">`../helpers/geo`</span></span>
+  <span data-fragment-index="2" class="stack fragment fade-in"><span data-fragment-index="3" class="fragment fade-out">`../models/show`</span></span>
+  <span data-fragment-index="3" class="stack fragment fade-in">`../templates`</span>
+</span>
+<span class="align">`')`</span>
+
+---
+
+### From <span>node_modules/</span>
+
+<span class="align">`var`</span>
+<span class="stack-holder align" style="width: 300px;">
+  <span data-fragment-index="4" class="stack fragment fade-out">`_`</span>
+  <span data-fragment-index="4" class="stack fragment fade-in"><span data-fragment-index="5" class="fragment fade-out">`Backbone`</span></span>
+  <span data-fragment-index="5" class="stack fragment fade-in"><span data-fragment-index="6" class="fragment fade-out">`moment`</span></span>
+  <span data-fragment-index="6" class="stack fragment fade-in">`async`</span>
+</span>
+<span class="align">`=`</span><br/>
+<span class="align">`require('`</span>
+<span class="stack-holder align" style="width: 300px;">
+  <span data-fragment-index="4" class="stack fragment fade-out">`lodash`</span>
+  <span data-fragment-index="4" class="stack fragment fade-in"><span data-fragment-index="5" class="fragment fade-out">`backbone`</span></span>
+  <span data-fragment-index="5" class="stack fragment fade-in"><span data-fragment-index="6" class="fragment fade-out">`moment`</span></span>
+  <span data-fragment-index="6" class="stack fragment fade-in">`async`</span>
+</span>
+<span class="align">`')`</span>
+
+
+Notes:
+- Clientside code as **Node-style** modules
+- Now that we have a common pattern for code we right and modules we use, they can all be required the same way.
+- The only difference is we use relative paths for our modules
+- Browserify does the rest of the magic using npm's logic for lookups within node_modules dir
+- We now have reusable components for every part of our app
+
+
+
+---
+
+
+
 ## A <span>Client</span> Page
+
 
 ```javascript
 // pages/saveShow.js
@@ -261,7 +302,10 @@ module.exports = P.extend({
 ```
 
 Notes:
-- 
+- We include a base component
+- and a model
+- and async from npm
+- and we extend our base module and add functionality
 
 
 
