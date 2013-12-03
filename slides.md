@@ -16,13 +16,14 @@
 - Single page app (**SPA**)
 - App is served by **Node**
 - Built on a **Node API**
+- Just an **API Client**
 - Deployed to **Azure**
 
 [![node](images/node.png)](http://nodejs.org/) [![azure](images/azure.png)](http://windowsazure.com)
 
 Notes:
 - Node API + client is all one language, makes developers more productive
-- App is just an API client
+- App as an API client is important because it serves as a sanity check to make sure we are properly separating concerns. It also allows us to plan for the future as we could have multiple clients and cross-service apps.
 - An app to help agents/assistants/artists/managers collaborate on all aspects of routing a tour around the world
 
 
@@ -61,9 +62,14 @@ Notes:
     &lt;!-- Meta tags... --&gt;
     &lt;!-- Splash images... --&gt;
     &lt;!-- Favicons and app icons... --&gt;
-    &lt;link rel="stylesheet" href="/app.css"&gt;
-    &lt;script src="/app.js"&gt;&lt;/script&gt;
+    &lt;link rel="stylesheet" href="/app.fd504f36.css"&gt;
+    &lt;script src="/app.647efd62.js"&gt;&lt;/script&gt;
 </code></pre>
+&nbsp;
+
+Notes:
+- This acts as our cache manifest file. I'll show you how later.
+- The importants bits are the css and js files, each named uniquely
 
 
 
@@ -73,14 +79,14 @@ Notes:
 
 ## The Team<span>(s)</span>
 
-API & Ops  
+API &amp; Ops  
 **Los Angeles**  
 ![CAA](images/logos/caa.svg)
 
 
-Web app: 2 devs  
+Web App: 2 devs  
 **Washington, Arizona**  
-![&yet](images/logos/andyet.svg)
+![&amp;yet](images/logos/andyet.svg)
 
 
 Notes:
@@ -118,7 +124,8 @@ Notes:
 
 
 ## Dev <span>Process</span>
-- **Don't** optimize against this
+- **Don't** sacrifice for production performance
+- **Guaranteed** cache priming/busting
 - <span class="align">Fast **iteration** loops on</span>
   <span class="stack-holder align align-left" style="width: 400px;">
     <span data-fragment-index="1" class="stack fragment fade-out">local</span>
@@ -127,20 +134,17 @@ Notes:
     <span data-fragment-index="3" class="stack fragment fade-in"><span data-fragment-index="4" class="fragment fade-out">staging</span></span>
     <span data-fragment-index="4" class="stack fragment fade-in">production</span>
   </span>
-- **Guaranteed** cache priming/busting
-
-![building](images/200-local.png)
 
 Notes:
+- I've been on project where production was what everything was optimizied for, to the point that developers had to jump through hoops to develop locally.
 - Fast iteration (for all environments and deviced)
-- How long does it take me to reload this page
-- How long until I can see this against real data
-- How long until I can test on my iPhone
-- Speed should reflect severity of change
+- How long does it take me to reload this page?
+- How long until I can see this against real data?
+- How long until I can test on my iPhone?
 - Local === seconds, Dev === minutes, Staging === 10 minutes, Production === 30 minutes
-- Guarantedd caching
-- Did my change show when I just refreshed?
-- If not, how can I be sure it will next time?
+- Guaranteed caching
+- Did my change show when I just refreshed? If not, how can I be sure it will next time?
+- One of the biggest pains as a developer is when you don't trust the process. I've been on projects where I was never sure if when I refreshed if I was seeing my latest changes. This conditioned me to worry about that and not on my code.
 
 
 
@@ -152,7 +156,7 @@ Notes:
 - Switches on **`process.env.NODE_ENV`**
 - Concatenates **non-CommonJS** files
 - Builds a **Browserified** bundle
-- **`onBeforeJS`** & **`onBeforeCSS`** hook
+- **`onBeforeJS`** &amp; **`onBeforeCSS`** hook
 
 ![building](images/building.gif)
 
@@ -232,7 +236,7 @@ Notes:
 
 ### From <span>Our Code</span>
 <span class="align">`var`</span>
-<span class="stack-holder align" style="width: 300px;">
+<span class="stack-holder align" data-fragment-counter style="width: 300px;">
   <span data-fragment-index="1" class="stack fragment fade-out">`BasePage`</span>
   <span data-fragment-index="1" class="stack fragment fade-in"><span data-fragment-index="2" class="fragment fade-out">`geospatial`</span></span>
   <span data-fragment-index="2" class="stack fragment fade-in"><span data-fragment-index="3" class="fragment fade-out">`ShowModel`</span></span>
@@ -253,7 +257,7 @@ Notes:
 ### From <span>node_modules/</span>
 
 <span class="align">`var`</span>
-<span class="stack-holder align" style="width: 300px;">
+<span class="stack-holder align" data-fragment-counter style="width: 300px;">
   <span data-fragment-index="4" class="stack fragment fade-out">`_`</span>
   <span data-fragment-index="4" class="stack fragment fade-in"><span data-fragment-index="5" class="fragment fade-out">`Backbone`</span></span>
   <span data-fragment-index="5" class="stack fragment fade-in"><span data-fragment-index="6" class="fragment fade-out">`moment`</span></span>
@@ -315,13 +319,12 @@ Notes:
 
 ## Continuous <span>Deployments</span>
 
-- A commit is a **push**
-- A branch is an **environment**
+A commit is a **push**  
+![commit](images/deploy-commit.png)  
+A branch is an **environment**  
+![env](images/deploy-env.png)
 
-&nbsp;
 
-> "Works on my machine"
-> <small>**Nobody**</small>
 
 Notes:
 - Someone will know somewhere when a deployment doesn't work
@@ -333,16 +336,35 @@ Notes:
 
 
 
+## Continuous <span>Deployments</span>
+
+&nbsp;
+
+> "Works on my machine"
+> <small>**Nobody**</small>
+
+Notes:
+- Nobody is committing code and not knowing if it works when deployed
+
+
+
+---
+
+
+
 ## All <span>JS</span>
 
 - Node **API**, Node **App**
 - Developer productivity**++**
-- App is **just** an API client
+- Devs can add features **top to bottom**
+
+![all js](images/all-js.png) {.class="fragment"}
 
 Notes:
 - Developers can jump back and forth between the two with minimal context switching
-- Since the app doesnt have any special API access, features often need to be implemented from top to bottom.
-- A JS API helped make this easier for the developers on this team
+- I was able to hop from the app to the API to implement pusher support from the API down to the app
+- Even though we had separate teams for the app and API it is still so great to be able to add a feature to the API and app when necessary
+- As you can see I was able to commit 21 times to the API, even though thats not a huge amount, I was still able to fix some bugs and add features during my normal workflow which was highly valuable to the team as a whole
 
 
 
@@ -351,29 +373,31 @@ Notes:
 
 
 ## Prod <span>Environment</span>
-- **Minifies** by default, **Caches** JS for 1yr
+- **Minifies** by default
+- **Caches** for 1 year
 - Filename **hashed** based on contents
 - <span class="align">`GET /app.`</span> 
-  <span class="stack-holder align" style="width: 223px;">
+  <span class="stack-holder align" style="width: 217px;">
     <span data-fragment-index="2" class="stack fragment fade-out">`fd504f36`</span>
     <span data-fragment-index="2" class="stack fragment fade-in">`647efd62`</span>
   </span>
-  <span class="align">`.js - `</span>
-  <span class="stack-holder align align-left" style="width: 223px;">
+  <span class="align">`.js `</span>
+  <span class="stack-holder align align-left" data-fragment-counter style="width: 350px;">
     <span data-fragment-index="1" class="stack fragment fade-out">`200`</span>
-    <span data-fragment-index="1" class="stack fragment fade-in"><span data-fragment-index="2" class="fragment fade-out">`304`</span></span>
+    <span data-fragment-index="1" class="stack fragment fade-in"><span data-fragment-index="2" class="fragment fade-out">`(from cache)`</span></span>
     <span data-fragment-index="2" class="stack fragment fade-in"><span data-fragment-index="3" class="fragment fade-out">`200`</span></span>
-    <span data-fragment-index="3" class="stack fragment fade-in">`304`</span>
+    <span data-fragment-index="3" class="stack fragment fade-in">`(from cache)`</span>
   </span>
 - Application code is on the **device**
 
-![304](images/304.png)
+![from cache](images/from-cache.png)
 
 Notes:
 - Minifies and gzips out code from 1.8MB to 218KB
 - We cache for a full year with the confidence that when we deploy, if the hash of the file changes, the filename will change.
-- We can get the a browser to do a 304 after the first request for the JS. So the user has almost all of the application code stored on the device and is just requesting and responding to API data.
-
+- It's not even doing an HTTP request. It just executes the code.
+- So the user has almost all of the application code stored on the device and is just requesting and responding to API data.
+- The end result is no request after the first one and no latency for the bulk of the application code
 
 
 ---

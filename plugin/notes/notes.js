@@ -16,7 +16,7 @@ var RevealNotes = (function() {
 		Reveal.addEventListener( 'fragmentshown', post );
 
 		// Fires when a fragment is hidden
-		Reveal.addEventListener( 'fragmenthidden', post );
+		//Reveal.addEventListener( 'fragmenthidden', post );
 
 		/**
 		 * Posts the current slide data to the notes window

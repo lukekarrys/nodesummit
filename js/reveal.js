@@ -2269,8 +2269,13 @@ var Reveal = (function(){
 
 		if( !slide && currentSlide ) {
 			var hasFragments = currentSlide.querySelectorAll( '.fragment' ).length > 0;
+			var hasFadeInFragments = currentSlide.querySelectorAll( '.fade-in' ).length > 0;
+			var hasDataFragmentCounter = currentSlide.querySelectorAll("[data-fragment-counter]").length > 0;
 			if( hasFragments ) {
-				var visibleFragments = currentSlide.querySelectorAll( '.fragment.visible' );
+				var selector = '.fragment.visible';
+				if (hasDataFragmentCounter) selector = '[data-fragment-counter] ' + selector;
+				if (hasFadeInFragments) selector = selector + '.fade-in';
+				var visibleFragments = currentSlide.querySelectorAll( selector );
 				f = visibleFragments.length - 1;
 			}
 		}
