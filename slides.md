@@ -156,7 +156,7 @@ Notes:
 - Switches on **`process.env.NODE_ENV`**
 - Concatenates **non-CommonJS** files
 - Builds a **Browserified** bundle
-- **`onBeforeJS`** &amp; **`onBeforeCSS`** hook
+- **`onBeforeJS`** &amp; **`onBeforeCSS`** hooks
 
 ![building](images/building.gif)
 
@@ -178,6 +178,7 @@ Notes:
 ## Use a <span>Module Pattern</span>
 - We use **CommonJS/Browserify**
 - Others use **AMD/RequireJS**
+- Use **something**
 - <span class="align">Structure</span> 
   <span class="stack-holder align" style="width: 235px;">
     <span data-fragment-index="1" class="stack fragment fade-out">collections</span>
