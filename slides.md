@@ -295,7 +295,7 @@ Notes:
 // pages/saveShow.js
 var Page = require('./base'); // Our base page module
 var Show = require('../models/show'); // Our show module
-var async = require('async'); // Lodash, from NPM
+var async = require('async'); // async, from NPM
 
 // Exporting our saveShow page module
 module.exports = P.extend({
