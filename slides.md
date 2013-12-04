@@ -321,7 +321,7 @@ var Show = require('../models/show'); // Our show module
 var async = require('async'); // async, from npm
 
 // Exporting our saveShow page module
-module.exports = P.extend({
+module.exports = Page.extend({
   initialize: function () {
     this.model = new Show();
   },
