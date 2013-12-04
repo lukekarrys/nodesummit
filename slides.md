@@ -17,6 +17,23 @@
 
 ## <span>tour</span>Router
 
+
+
+---
+
+
+
+<!-- slide-attributes: class="no-padding" -->
+![app](images/app.png)
+
+
+
+---
+
+
+
+## <span>tour</span>Router
+
 - Single page app (**SPA**)
 - App is served by **Node**
 - Built on a **Node API**
