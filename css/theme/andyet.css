@@ -164,7 +164,8 @@ p strong, p em, p span, h1 strong, h1 em, h1 span, h2 strong, h2 em, h2 span, h3
   border: none;
   box-shadow: 0 0 10px #4d5659; }
 
-.reveal section img[src^="images/logos"] {
+.reveal section img[src^="images/logos"],
+.reveal section img[src^="images/people/"] {
   background: none;
   box-shadow: none;
   margin: 15px;
@@ -172,9 +173,22 @@ p strong, p em, p span, h1 strong, h1 em, h1 span, h2 strong, h2 em, h2 span, h3
 
 .reveal section img[src^="images/node"],
 .reveal section img[src^="images/azure"],
-.reveal section img[src^="images/all-js"] {
+.reveal section img[src^="images/all-js"],
+.reveal section img[src^="images/tweet.png"],
+.reveal section img[src^="images/people/"] {
   background: none;
   box-shadow: none; }
+
+.reveal section img[src^="images/tweet.png"] {
+  height: 100px;
+}
+
+.reveal section img[src^="images/people/"] {
+  border-radius: 4px;
+}
+
+.reveal .tight p {margin:0;}
+.reveal .tight img {margin: 0 15px !important;}
 
 .reveal section img[src$="inline"] {
   margin: 0;

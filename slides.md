@@ -1,9 +1,13 @@
+<!-- slide-attributes: class="tight" -->
 ## Client Solutions from <span>Development</span> to <span>Production</span>
 
 [![&yet](images/logos/andyet.svg)](http://andyet.com)
-[![CAA](images/logos/caa.svg)](http://caa.com)
+![luke](images/people/luke.jpg)
+<a style="top: -30px" href="http://twitter.com/lukekarrys">Luke Karrys</a>
 
-[Luke Karrys](http://twitter.com/lukekarrys) **&amp;** [Glenn Scott](http://twitter.com/glennsc)
+[![CAA](images/logos/caa.svg)](http://caa.com)
+![glenn](images/people/glenn.jpg)
+<a style="top: -30px" href="http://twitter.com/glennsc">Glenn Scott</a>
 
 
 
@@ -401,13 +405,37 @@ Notes:
 - The end result is no request after the first one and no latency for the bulk of the application code
 
 
+
 ---
 
 
 
-## The End
+## Everyone is **happy**
+
+- Developers love the <strong class="fragment">process</strong>
+- Users love the <strong class="fragment">speed</strong>
+- Stakeholders love the <strong class="fragment">timeline</strong>
+
+Notes:
+- As a developer im able to
+- Users cant a fast app on all platforms
+- Stakeholders get rapid iteration and something great that is built quickly
+
+
+
+---
+
+
+
+## Thank You!
 ### <span>Follow us on Twitter</span>
+
+![twitter](images/tweet.png)
 
 [@lukekarrys](https://twitter.com/lukekarrys) [@andyet](https://twitter.com/andyet)
 
 [@glennsc](https://twitter.com/glennsc)
+
+
+Notes:
+- And come work for CAA
