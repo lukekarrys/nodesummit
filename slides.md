@@ -17,6 +17,9 @@
 
 ## <span>tour</span>Router
 
+Notes:
+- An app to help agents/assistants/artists/managers collaborate on all aspects of routing a tour around the world
+
 
 
 ---
@@ -45,7 +48,6 @@
 Notes:
 - Node API + client is all one language, makes developers more productive
 - App as an API client is important because it serves as a sanity check to make sure we are properly separating concerns. It also allows us to plan for the future as we could have multiple clients and cross-service apps.
-- An app to help agents/assistants/artists/managers collaborate on all aspects of routing a tour around the world
 
 
 
@@ -54,7 +56,7 @@ Notes:
 
 
 
-## <span>tour</span>Router Stats
+## Client <span>Stats</span>
 
 - **9900** lines of custom JS in **113** files
 - **1700** lines of jade in **43** files
@@ -434,8 +436,8 @@ Notes:
 - Stakeholders love the <strong class="fragment">timeline</strong>
 
 Notes:
-- As a developer im able to
-- Users cant a fast app on all platforms
+- As a developer im able to develop from dev to production easily and focus on the harder issues
+- Users have a fast app on all platforms
 - Stakeholders get rapid iteration and something great that is built quickly
 
 
@@ -452,7 +454,3 @@ Notes:
 [@lukekarrys](https://twitter.com/lukekarrys) [@andyet](https://twitter.com/andyet)
 
 [@glennsc](https://twitter.com/glennsc)
-
-
-Notes:
-- And come work for CAA
