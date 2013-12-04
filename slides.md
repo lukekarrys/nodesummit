@@ -105,7 +105,7 @@ Notes:
 - [Moonboots](https://github.com/HenrikJoreteg/moonboots) {.class="fragment"}
 - [Express](https://github.com/visionmedia/express)/[Resource](https://github.com/visionmedia/express-resource) {.class="fragment"}
 - [Browserify](https://github.com/substack/node-browserify) {.class="fragment"}
-- [NPM](https://npmjs.org/) {.class="fragment"}
+- [npm](https://npmjs.org/) {.class="fragment"}
 - [Jade](https://github.com/visionmedia/jade)/[Templatizer](https://github.com/HenrikJoreteg/templatizer) {.class="fragment"}
 - [Backbone](http://backbonejs.org/) {.class="fragment"}
 - [Human JavaScript](http://docs.humanjavascript.com/) {.class="fragment"}
@@ -113,7 +113,7 @@ Notes:
 Notes:
 - Moonboots is a set of conventions on the server for SPAs. It provides what we need to do caching, minifying, concatenation of assets as well as helpers for routing. It's also very environment aware with sane defaults for development and production.
 - Browserify powers much of moonboots and gives us module on the client.
-- NPM is where we try to get all of our JS from
+- npm is where we try to get all of our JS from
 - Human Javascript is patterns of large client side apps. Powered by backbone it provides extensions for models, views and collections and helpers to connect all three.
 - The importants part isn't the tech, but the patterns the tech allows us to follow easily
 
@@ -208,8 +208,8 @@ Notes:
 
 
 
-## Use <span>NPM</span>
-- Install clientisde code from **NPM**
+## Use <span style="text-transform: lowercase">npm</span>
+- Install clientisde code from **npm**
 - <span class="align">`npm install`</span> 
   <span class="stack-holder align" style="width: 250px;">
     <span data-fragment-index="1" class="stack fragment fade-out">`backbone`</span>
@@ -222,10 +222,10 @@ Notes:
 - Send [Univeral Module Definition](https://github.com/umdjs/umd/blob/master/returnExports.js) **PRs :)**
 
 Notes:
-- As much as possible we try to get clientside libraries from NPM
+- As much as possible we try to get clientside libraries from npm
 - Reusable between server and client
 - Extremely easy to find and get a module into your dev and production envs
-- We are not restricted. Moonboots can handle non CommonJS modules. But it is so much nicer to use all code from NPM.
+- We are not restricted. Moonboots can handle non CommonJS modules. But it is so much nicer to use all code from npm.
 
 
 
@@ -295,7 +295,7 @@ Notes:
 // pages/saveShow.js
 var Page = require('./base'); // Our base page module
 var Show = require('../models/show'); // Our show module
-var async = require('async'); // async, from NPM
+var async = require('async'); // async, from npm
 
 // Exporting our saveShow page module
 module.exports = P.extend({
