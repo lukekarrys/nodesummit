@@ -320,7 +320,7 @@ Notes:
 
 ## Continuous <span>Deployments</span>
 
-A commit is a **push**  
+A commit is a **deploy**  
 ![commit](images/deploy-commit.png)  
 A branch is an **environment**  
 ![env](images/deploy-env.png)
