@@ -185,6 +185,7 @@ p strong, p em, p span, h1 strong, h1 em, h1 span, h2 strong, h2 em, h2 span, h3
 
 .reveal section img[src^="images/people/"] {
   border-radius: 4px;
+  border: 2px solid #4d5659;
 }
 
 .reveal .tight p {margin:0;}
