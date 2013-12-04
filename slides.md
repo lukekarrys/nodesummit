@@ -323,7 +323,7 @@ module.exports = P.extend({
   initialize: function () {
     this.model = new Show();
   },
-  render: function () {/* ...code... */}
+  render: function () { async.each( /* ...stuff... */ ); }
 });
 ```
 
