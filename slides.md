@@ -242,7 +242,7 @@ Notes:
   </span>
   <span class="align">` --save`</span>
 - Moonboots can handle **anything else**
-- Send [Univeral Module Definition](https://github.com/umdjs/umd/blob/master/returnExports.js) **PRs :)**
+- Send [Universal Module Definition](https://github.com/umdjs/umd/blob/master/returnExports.js) **PRs :)**
 
 Notes:
 - As much as possible we try to get clientside libraries from npm
